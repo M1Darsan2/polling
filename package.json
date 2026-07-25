@@ -1,0 +1,16 @@
+{
+  "name": "polling",
+  "version": "1.0.0",
+  "description": "A simple polling application with socket.io for realtime updates",
+  "scripts": {
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "server": "npm start --prefix server",
+    "client": "npm run dev --prefix client",
+    "build": "npm run build --prefix client",
+    "start:prod": "npm run build && npm start --prefix server",
+    "install-all": "npm install && npm install --prefix server && npm install --prefix client"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.4"
+  }
+}
