@@ -24,7 +24,7 @@ app.use(cors({ origin: isProduction ? false : 'http://localhost:5173' }));
 app.use(express.json());
 app.use('/api/polls', pollRoutes);
 if (isProduction) {
-  const buildPath = path.join(__dirname, '../client/build');
+  const buildPath = path.join(__dirname, '../client/dist');
   app.use(express.static(buildPath));
 
   app.get('*', (req, res) => {
